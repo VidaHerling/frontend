@@ -54,7 +54,7 @@ export default function Restaurants(props){
                   <Card.Img
                     variant="top"
                     style={{ height: "15em" }}
-                    src={`http://localhost:1337${dish.image.url}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/${dish.image.url}`}
                   />
                   <Card.Body>
                     <Card.Title>{dish.name}</Card.Title>

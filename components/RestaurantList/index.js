@@ -36,7 +36,7 @@ export default function RestaurantList(props) {
     const restaurantList = searchQuery.map((res) => (
       <Col xs="6" sm="4" style={{ padding: 0 }} key={res.id}>
         <Card style={{ margin: "10px" }}>
-          <Card.Img variant="top" style={{ height: "15em" }} src={`http://localhost:1337${res.image.url}`} />
+          <Card.Img variant="top" style={{ height: "15em" }} src={`${process.env.NEXT_PUBLIC_API_URL}/${res.image.url}`} />
           <Card.Body>
             <Card.Title>{res.name}</Card.Title>
             <Card.Text>
