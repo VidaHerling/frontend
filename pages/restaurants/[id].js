@@ -3,7 +3,7 @@
 import { gql, useQuery } from '@apollo/client';
 import { Button, Card, Row, Col, Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Cart from '../../components/cart';
 import AppContext from '../../context/AppContext';
 
@@ -47,7 +47,6 @@ export default function Restaurants(props){
   if(restaurant){
     return (
         <>
-          <h1>{restaurant.name}</h1>
           <Row>
             {restaurant.dishes.map((dish) => (
               <Col xs="6" sm="4" style={{ padding: 0 }} key={dish.id}>
