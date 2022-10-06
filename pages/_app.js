@@ -8,6 +8,7 @@ import client from "../lib/apollo";
 import AppContext from "../context/AppContext";
 import fetch from "isomorphic-fetch";
 import Cookies from "js-cookie";
+import { SessionProvider } from "next-auth/react";
 
 export default function MyApp({ Component, pageProps }) {
   const [state, setState] = useState({ 
@@ -40,6 +41,7 @@ export default function MyApp({ Component, pageProps }) {
       }).then(async (res) => {
         // if res comes back not valid, token is not valid
         // delete the token and log the user out on client
+        console.log(">>>>res and NEXT_PUBLIC_API_URL", res, " & ", process.env.NEXT_PUBLIC_API_URL )
         if (!res.ok) {
           Cookies.remove("token");
           setState({ ...state, user: null });
@@ -158,9 +160,9 @@ export default function MyApp({ Component, pageProps }) {
     >
       <ApolloProvider client={client}>
         <Head />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
       </ApolloProvider>
     </AppContext.Provider>
   );

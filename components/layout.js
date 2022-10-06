@@ -6,6 +6,7 @@ import Script from 'next/script';
 import AppContext from '../context/AppContext';
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { logout } from '../lib/auth';
+// import GoogleAuth from './googleAuth';
 
 export default function Layout(props) {
   let { user, setUser } = useContext(AppContext);
@@ -53,6 +54,7 @@ export default function Layout(props) {
                 (<>
                   <Nav.Link href="/login"><Button variant="light">Log In</Button></Nav.Link>
                   <Nav.Link href="/register"><Button variant="info">Sign Up</Button></Nav.Link>
+                  {/* <GoogleAuth /> */}
                 </>)
                 }
               </Navbar>

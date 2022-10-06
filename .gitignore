@@ -1,6 +1,7 @@
 /* ignore the followiing files */
 node_modules
 .next
+.env
 .env.production
 .env.development
 netlify.toml

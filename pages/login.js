@@ -92,12 +92,14 @@ export default function Login(props) {
                             setLoading(false);
                             // set authed User in global context to update header/app state
                             setUser(res.data.user);
+                            alert("Log in successfully")
                             console.log(res.data.user)
                           })
                           .catch((error) => {
                             setError(error.response.data);
                             setLoading(false);
                           });
+                        window.history.back();
                       }}
                     >
                       {loading ? "Loading... " : "Submit"}

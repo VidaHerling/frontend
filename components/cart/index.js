@@ -14,7 +14,7 @@ import AppContext from "../../context/AppContext";
 import Cookies from "js-cookie";
 
 export default function Cart(){
-  const { cart, addItem, removeItem }  = useContext(AppContext);
+  const { user, cart, addItem, removeItem }  = useContext(AppContext);
   const router = useRouter();
   // Cookies.set("checkoutCart", JSON.stringify(cart));
 
@@ -81,20 +81,36 @@ export default function Cart(){
               <h3>${cart.total.toFixed(2)}</h3>
             </Badge>
             <div>
-              {router.pathname === "/restaurants/[id]" && (
-                <div
-                  style={{
-                    marginTop: 10,
-                    marginRight: 10,
-                  }}
-                >
-                  <Link href="/checkout">
-                    <Button style={{ width: "100%" }} color="primary">
-                      <a>Order</a>
-                    </Button>
-                  </Link>
-                </div>
-              )}
+              {router.pathname === "/restaurants/[id]" ? (
+                !user ? 
+                  (<div
+                    style={{
+                      marginTop: 10,
+                      marginRight: 10,
+                    }}
+                  >
+                    <Link href="/login">
+                      <Button style={{ width: "100%" }} color="primary">
+                        <a>Sign in to Order</a>
+                      </Button>
+                    </Link>
+                  </div>
+                ): 
+                (
+                  <div
+                    style={{
+                      marginTop: 10,
+                      marginRight: 10,
+                    }}
+                  >
+                    <Link href="/checkout">
+                      <Button style={{ width: "100%" }} color="primary">
+                        <a>Order</a>
+                      </Button>
+                    </Link>
+                  </div>
+                )) : null
+                }
 
               {router.pathname === "/checkout" && (
                 <Button

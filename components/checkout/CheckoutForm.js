@@ -69,6 +69,7 @@ export default function CheckoutForm() {
     console.log(response.ok)
     console.log(">>>response", JSON.stringify(response))
 
+    // must log in to confirm the order and error message.
     if (!userToken){
       setError("Log in to confirm the order")
     } else {
