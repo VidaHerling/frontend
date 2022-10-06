@@ -16,12 +16,12 @@ export default function MyApp({ Component, pageProps }) {
     user: null
    });
 
-   console.log(`in app.js, the cart is ${JSON.stringify(state.cart)}`)
+  //  console.log(`in app.js, the cart is ${JSON.stringify(state.cart)}`)
 
   useEffect(() => {
     // grab token value from cookie
     const token = Cookies.get("token");
-    console.log("_app.js token is " + token);
+    // console.log("_app.js token is " + token);
 
     if (typeof cart === "string" && cart !== "undefined") {
       console.log("foyd");
@@ -41,7 +41,7 @@ export default function MyApp({ Component, pageProps }) {
       }).then(async (res) => {
         // if res comes back not valid, token is not valid
         // delete the token and log the user out on client
-        console.log(">>>>res and NEXT_PUBLIC_API_URL", res, " & ", process.env.NEXT_PUBLIC_API_URL )
+        // console.log(">>>>res and NEXT_PUBLIC_API_URL", res, " & ", process.env.NEXT_PUBLIC_API_URL )
         if (!res.ok) {
           Cookies.remove("token");
           setState({ ...state, user: null });
@@ -70,9 +70,9 @@ export default function MyApp({ Component, pageProps }) {
     } else {
       foundItem = false;
     }
-    console.log("foundItem is " + JSON.stringify(foundItem))
-    console.log(`items are ${JSON.stringify(items)}`)
-    console.log("add item, cart is " + JSON.stringify(state.cart))
+    // console.log("foundItem is " + JSON.stringify(foundItem))
+    // console.log(`items are ${JSON.stringify(items)}`)
+    // console.log("add item, cart is " + JSON.stringify(state.cart))
     
     //if item is new, add to cart and set quantity equals to 1;
     if(!foundItem){
@@ -88,8 +88,8 @@ export default function MyApp({ Component, pageProps }) {
         ...prevState, 
         cart: newCart
       }));
-      console.log(`newCart is ${JSON.stringify(newCart)}`)
-      console.log(`the user is ${JSON.stringify(state.user)}`)
+      // console.log(`newCart is ${JSON.stringify(newCart)}`)
+      // console.log(`the user is ${JSON.stringify(state.user)}`)
     } else {
       let newCart = {
         items: items.map((item) =>{
@@ -117,7 +117,7 @@ export default function MyApp({ Component, pageProps }) {
       foundItem = false;
     }
 
-    console.log("foundItem is " + JSON.stringify(foundItem))
+    // console.log("foundItem is " + JSON.stringify(foundItem))
     //console.log(`items are ${JSON.stringify(items)} and item is ${JSON.stringify(item)}`)
 
     if(foundItem.quantity > 1){

@@ -33,15 +33,15 @@ export default function Restaurants(props){
     variables: { id: router.query.id }
   });
   // console.log("router.query is " + JSON.stringify(router.query));
-  console.log("router is " + JSON.stringify(router.query));
+  // console.log("router is " + JSON.stringify(router.query));
   //console.log("router.asPath" + router.asPath);
 
   if (loading) return <h1>Loading ...</h1>
   if (error) return <h1>Error loading dishes</h1>;
   // if (!data.restaurants.dishes) return <h1>No Dishes Found</h1>
 
-  console.log('in dishes.js, data is ' + JSON.stringify(data))
-  console.log("on restaurant page, the user is " + JSON.stringify(user));
+  // console.log('in dishes.js, data is ' + JSON.stringify(data))
+  // console.log("on restaurant page, the user is " + JSON.stringify(user));
 
   const { restaurant } = data;
   if(restaurant){

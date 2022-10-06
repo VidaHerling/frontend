@@ -20,8 +20,8 @@ export default function Register(){
   const appContext = useContext(AppContext);
   // const [user, setUser] = useState()
 
-  console.log("register form entries: " + JSON.stringify(data));
-  console.log("register user: " + appContext.user)
+  // console.log("register form entries: " + JSON.stringify(data));
+  // console.log("register user: " + appContext.user)
   return (
     <Container>
       <Row>

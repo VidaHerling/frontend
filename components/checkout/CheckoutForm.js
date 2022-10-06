@@ -23,7 +23,7 @@ export default function CheckoutForm() {
   const elements = useElements();
   const appContext = useContext(AppContext);
 
-  console.log("checkout Form cart: " + JSON.stringify(appContext.cart));
+  // console.log("checkout Form cart: " + JSON.stringify(appContext.cart));
 
   function onChange(e) {
     // set the key = to the name property equal to the value typed
@@ -37,8 +37,6 @@ export default function CheckoutForm() {
       [name]: value
     }))
   }
-  
-  console.log(">>>>data", data);
 
   async function submitOrder(e) {
     e.preventDefault();
@@ -50,10 +48,10 @@ export default function CheckoutForm() {
     // // e.g. createToken - https://stripe.com/docs/js/tokens_sources/create_token?type=cardElement
     // get token back from stripe to process credit card
     const token = await stripe.createToken(cardElement);
-    console.log(">>>>token", token);
+    // console.log(">>>>token", token);
     const userToken = Cookies.get("token");
-    console.log(">>>>userToken", userToken);
-    console.log(">>>>NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
+    // console.log(">>>>userToken", userToken);
+    // console.log(">>>>NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
       method: "POST",
       headers: userToken && { Authorization: `Bearer ${userToken}` },
@@ -66,8 +64,8 @@ export default function CheckoutForm() {
         token: token.token.id,
       }),
     });
-    console.log(response.ok)
-    console.log(">>>response", JSON.stringify(response))
+    // console.log(response.ok)
+    // console.log(">>>response", JSON.stringify(response))
 
     // must log in to confirm the order and error message.
     if (!userToken){

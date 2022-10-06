@@ -24,13 +24,13 @@ export default function RestaurantList(props) {
   if (error) return <h1>Error loading restaurants</h1>;
   if (!data) return <h1>No Restaurant Found</h1>
   /* if restaurants are returned from the GraphQL query, run the filter query and set equal to varaiable restaurant Search*/
-  console.log("RestaurantList " + JSON.stringify(data))
+  // console.log("RestaurantList " + JSON.stringify(data))
 
   const searchQuery = data.restaurants.filter((res) => {
     return res.name.toLowerCase().includes(props.search);
   })
 
-  console.log("searchQuery is " + JSON.stringify(searchQuery))
+  // console.log("searchQuery is " + JSON.stringify(searchQuery))
 
   if(searchQuery.length != 0){
     const restaurantList = searchQuery.map((res) => (

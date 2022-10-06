@@ -30,7 +30,7 @@ export default function Login(props) {
     updateData({ ...data, [event.target.name]: event.target.value });
   }
 
-  console.log("login form entries: " + JSON.stringify(data));
+  // console.log("login form entries: " + JSON.stringify(data));
 
   return (
     <Container>

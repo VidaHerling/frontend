@@ -10,7 +10,7 @@ import { logout } from '../lib/auth';
 
 export default function Layout(props) {
   let { user, setUser } = useContext(AppContext);
-  console.log("user: " + JSON.stringify(user));
+  // console.log("user: " + JSON.stringify(user));
 
   const title = "NYC Restaurants";
   return (

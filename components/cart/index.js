@@ -19,7 +19,7 @@ export default function Cart(){
   // Cookies.set("checkoutCart", JSON.stringify(cart));
 
   const renderItems = () => {
-    console.log("in cart.js " + JSON.stringify(cart));
+    // console.log("in cart.js " + JSON.stringify(cart));
     // let { items } = cart;
     if(cart.items && cart.items.length){
       const itemList = cart.items.map(item => {
@@ -145,7 +145,6 @@ export default function Cart(){
           <div>
             {checkoutItems()}
           </div>
-          {console.log(`Route Path: ${router.asPath}`)}
         </Card.Body>
       </Card>
     </>
