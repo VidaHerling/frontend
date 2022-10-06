@@ -40,7 +40,7 @@ export default function Restaurants(props){
   if (error) return <h1>Error loading dishes</h1>;
   // if (!data.restaurants.dishes) return <h1>No Dishes Found</h1>
 
-  // console.log('in dishes.js, data is ' + JSON.stringify(data))
+  console.log('restaurant page: data is ' + JSON.stringify(data))
   // console.log("on restaurant page, the user is " + JSON.stringify(user));
 
   const { restaurant } = data;
