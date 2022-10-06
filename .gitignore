@@ -6,3 +6,5 @@ node_modules
 .env.development
 netlify.toml
 .git
+# Local Netlify folder
+.netlify
