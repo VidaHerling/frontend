@@ -54,7 +54,7 @@ export default function CheckoutForm() {
     const userToken = Cookies.get("token");
     console.log(">>>>userToken", userToken);
     console.log(">>>>NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}orders`, {
       method: "POST",
       headers: userToken && { Authorization: `Bearer ${userToken}` },
       body: JSON.stringify({

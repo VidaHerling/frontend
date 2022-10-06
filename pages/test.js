@@ -53,7 +53,7 @@ export default function Restaurants(props){
                   <CardImg
                     top={true}
                     style={{ height: 150, width:150 }}
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/${res.image.url}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}${res.image.url}`}
                   />
                   <CardBody>
                     <CardTitle>{res.name}</CardTitle>
